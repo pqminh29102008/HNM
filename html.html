@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HNM — Handmade</title>
+
+    <meta name="description" content="HNM - Đồ thủ công tinh xảo. Sản phẩm handmade chọn lọc, giao hàng toàn quốc." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root{
+        --bg:#f6f8fb;
+        --card:#ffffff;
+        --muted:#6b7280;
+        --primary:#1f7a4c;
+        --accent:#ef4444;
+        --glass: rgba(255,255,255,0.6);
+        --maxw:1200px;
+        --radius:12px;
+        --shadow: 0 8px 30px rgba(8,15,30,0.06);
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family:Inter, system-ui, Arial, sans-serif;
+        background:linear-gradient(180deg,var(--bg),#eef4f9);
+        color:#071025;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        padding:24px 16px 80px;
+      }
+      .wrap{max-width:var(--maxw);margin:0 auto}
+
+      /* HEADER */
+      header.site{
+        display:flex;align-items:center;gap:16px;justify-content:space-between;
+        background:linear-gradient(90deg,var(--primary),#165c3f);
+        color:#fff;padding:14px 18px;border-radius:16px;box-shadow:var(--shadow);
+      }
+      .brand{display:flex;align-items:center;gap:12px}
+      .brand img{width:56px;height:56px;border-radius:10px;object-fit:cover;border:2px solid rgba(255,255,255,0.12)}
+      .brand .title{font-weight:700;font-size:18px;letter-spacing:0.2px}
+      .brand .tag{font-size:13px;opacity:0.95;color:rgba(255,255,255,0.95)}
+
+      /* NAV */
+      nav.topnav{display:flex;gap:12px;align-items:center;background:var(--card);padding:12px;border-radius:14px;margin-top:14px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+      .nav-left{display:flex;gap:10px;align-items:center}
+      .nav-cats details{padding:6px;border-radius:8px}
+      .search{display:flex;gap:8px;align-items:center}
+      .search input{padding:10px 12px;border-radius:10px;border:1px solid #eef2f7;width:380px}
+      .btn{padding:9px 12px;border-radius:10px;border:0;background:var(--primary);color:#fff;font-weight:600;cursor:pointer}
+      .btn.ghost{background:#fff;border:1px solid #e6e6e6;color:inherit}
+      select{padding:8px;border-radius:8px;border:1px solid #eef2f7}
+
+      /* LAYOUT */
+      .layout{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
+      @media (max-width:980px){
+        .search input{width:200px}
+        .layout{grid-template-columns:1fr}
+      }
+
+      .hero{display:flex;gap:18px;align-items:center;padding:18px;border-radius:16px;background:var(--card);box-shadow:var(--shadow)}
+      .hero h1{margin:0;font-size:22px}
+      .hero p{margin:6px 0;color:var(--muted)}
+      .hero .cta{display:flex;gap:10px;margin-top:8px}
+
+      /* PRODUCTS */
+      .products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+      @media (max-width:1100px){.products{grid-template-columns:repeat(2,1fr)}}
+      @media (max-width:720px){.products{grid-template-columns:1fr}}
+
+      .card{background:linear-gradient(180deg, var(--card), #fff);padding:12px;border-radius:12px;box-shadow:0 6px 22px rgba(8,15,30,0.04);display:flex;flex-direction:column;gap:8px}
+      .card .img{width:100%;height:160px;border-radius:10px;overflow:hidden}
+      .card img{width:100%;height:100%;object-fit:cover;display:block}
+      .card .meta{display:flex;justify-content:space-between;align-items:center}
+      .price{font-weight:800}
+      .tags{color:var(--muted);font-size:13px}
+      .card .actions{display:flex;gap:8px;margin-top:6px}
+
+      /* CART */
+      aside.cart{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);position:sticky;top:24px;height:max-content}
+      .muted{color:var(--muted)}
+      .hr{height:1px;background:#eef2f7;margin:12px 0;border-radius:2px}
+      .cart-list{max-height:380px;overflow:auto;padding-right:8px}
+
+      /* FOOTER */
+      footer.sitefoot{margin-top:18px;text-align:center;color:var(--muted)}
+
+      /* small helpers */
+      .small{font-size:13px}
+      .center{display:flex;justify-content:center}
+
+      /* accessibility focus */
+      a:focus,button:focus,input:focus{outline:3px solid rgba(31,122,76,0.14);outline-offset:2px}
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site" role="banner">
+        <div class="brand">
+          <img src="https://ggmeo.com/images/linh-thu-dtcl/gwen-tu-chi-duong-khi-ti-ni.jpg" alt="logo HNM"/>
+          <div>
+            <div class="title">HNM — Handmade shop</div>
+            <div class="tag small">Đồ thủ công số lượng giới hạn • Giao hàng toàn quốc</div>
+          </div>
+        </div>
+        <div class="center" style="gap:18px">
+          <div class="small">Miễn phí giao hàng từ <strong>500.000₫</strong></div>
+          <div class="small">📞 090-xxx-xxxx</div>
+        </div>
+      </header>
+
+      <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <div class="nav-left">
+          <details class="nav-cats"><summary>Danh mục ▾</summary>
+            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+              <a href="#vong" class="muted small">Vòng</a>
+              <a href="#gau" class="muted small">Gấu bông</a>
+              <a href="#moc" class="muted small">Móc khóa</a>
+              <a href="#tui" class="muted small">Túi</a>
+              <a href="#non" class="muted small">Nón</a>
+            </div>
+          </details>
+
+          <form id="searchForm" class="search" onsubmit="event.preventDefault(); applySearch();" role="search" aria-label="Tìm sản phẩm">
+            <label for="q" style="display:none">Tìm</label>
+            <input id="q" name="q" type="search" placeholder="Tìm: vòng, gấu, móc..." aria-label="Tìm sản phẩm" />
+            <button class="btn" type="submit">Tìm</button>
+          </form>
+
+        </div>
+
+        <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+          <label for="sort" class="muted small">Sắp xếp</label>
+          <select id="sort" name="sort" onchange="applySearch()">
+            <option value="featured">Nổi bật</option>
+            <option value="price_asc">Giá thấp → cao</option>
+            <option value="price_desc">Giá cao → thấp</option>
+          </select>
+
+          <button class="btn.ghost btn ghost" onclick="alert('Yêu thích demo')">❤️ Yêu thích</button>
+          <button class="btn ghost" onclick="alert('Đăng nhập demo')">👤 Đăng nhập</button>
+
+          <details id="cartDetails" aria-label="Giỏ hàng" style="padding:6px;border-radius:8px">
+            <summary aria-haspopup="true">🛒 Giỏ hàng <span id="cartCount" aria-live="polite" style="margin-left:6px;color:var(--accent)">0</span></summary>
+            <div style="margin-top:8px">
+              <div id="miniCart" class="muted small">Chưa có sản phẩm</div>
+              <div class="hr"></div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div class="muted">Tạm tính</div>
+                <div id="miniTotal" style="font-weight:700">0₫</div>
+              </div>
+              <div class="actions" style="margin-top:8px;display:flex;gap:8px">
+                <button class="btn ghost" onclick="clearCart()">Xóa</button>
+                <button class="btn" onclick="openCheckout()">Thanh toán</button>
+              </div>
+            </div>
+          </details>
+        </div>
+      </nav>
+
+      <section class="hero" aria-label="Giới thiệu">
+        <div style="flex:1">
+          <h1>Đồ thủ công tinh xảo — Mỗi món một câu chuyện</h1>
+          <p class="muted">Sản phẩm handmade chọn lọc, chất liệu an toàn, giao hàng toàn quốc.</p>
+          <div class="cta">
+            <a href="#products" class="btn">Xem sản phẩm</a>
+            <button class="btn ghost" onclick="document.getElementById('q').focus()">Tìm kiếm</button>
+          </div>
+        </div>
+        <div style="width:360px;flex-shrink:0">
+          <div style="border-radius:10px;overflow:hidden;height:180px">
+            <img src="https://ggmeo.com/images/linh-thu-dtcl/gwen-ti-ni.jpg" alt="Sản phẩm thủ công" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+        </div>
+      </section>
+
+      <main class="layout" id="main">
+        <section id="products">
+          <h2>Sản phẩm nổi bật</h2>
+          <div class="products" id="productsGrid" role="list"></div>
+        </section>
+
+        <aside class="cart" aria-labelledby="cartTitle">
+          <h3 id="cartTitle">Giỏ hàng</h3>
+          <div class="cart-list" id="cartList"><div class="muted">Chưa có sản phẩm</div></div>
+          <div class="hr"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><div class="muted">Tạm tính</div><div id="cartSubtotal" style="font-weight:700">0₫</div></div>
+          <div style="margin-top:10px;display:flex;gap:8px"><button class="btn ghost" onclick="clearCart()">Xóa hết</button><button class="btn" onclick="openCheckout()">Thanh toán</button></div>
+        </aside>
+      </main>
+
+      <footer class="sitefoot">&copy; <span id="year"></span> HNM — Demo (HTML-first)</footer>
+
+    </div>
+
+    <dialog id="dialogBox" aria-modal="true">
+      <form method="dialog" id="dialogForm" style="display:block">
+        <h3 id="dialogTitle">Thông tin</h3>
+        <div id="dialogContent" class="muted">Nội dung</div>
+        <menu style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+          <button value="cancel" class="btn ghost">Đóng</button>
+          <button id="dialogAction" value="confirm" class="btn">Xác nhận</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script>
+      // DATA
+      const PRODUCTS = [
+        {id:1,name:"Vòng Ngọc Biển",price:100000,desc:"Vòng ngọc tự nhiên, thủ công",img:"https://pos.nvncdn.com/7be01f-86410/ps/Lac-tay-Da-Phoi-Ngoc-Charm-Sao-Bien-2662-4.jpg?v=1754642228",tags:["vòng","ngọc"]},
+        {id:2,name:"Gấu Bông Len",price:115000,desc:"Gấu bông len mềm mại",img:"https://lenhandmade.com.vn/wp-content/uploads/2024/01/bo-hoa-hong-len-handmade-xinh-xan.png",tags:["gấu","len"]},
+        {id:3,name:"Móc Khóa Thủ Công",price:45000,desc:"Móc khóa lưu niệm",img:"https://bizweb.dktcdn.net/100/267/913/products/vn-11134207-7r98o-luk2j66trswid8-1727665701889.jpg?v=1727666153720",tags:["móc","khóa"]},
+        {id:4,name:"Túi Vải Biển",price:220000,desc:"Túi vải cotton",img:"https://tiemlenconvit.com/wp-content/uploads/2024/08/z5684782711627_12e93969ec79234b772a532e0ed43a85.jpg",tags:["túi","vải"]},
+        {id:5,name:"Vòng Tay Boho",price:90000,desc:"Vòng tay phong cách boho",img:"https://down-vn.img.susercontent.com/file/sg-11134201-22120-a6qy2a95dplv08.webp",tags:["vòng"]},
+        {id:6,name:"Nón Len Ấm",price:80000,desc:"Nón len giữ ấm",img:"https://down-vn.img.susercontent.com/file/69535e6897338a71c858fbb5ab6041ea.webp",tags:["nón","len"]},
+        {id:7,name:"Túi len",price:100000,desc:"Len lông cừu",img:"https://balovanphuc.com/wp-content/uploads/2023/10/cach-giat-tui-xach-vai-len-1.jpeg",tags:["túi"]},
+        {id:8,name:"Bó hoa",price:120000,desc:"Móc len thủ công cùng 1 số vật liệu khác",img:"https://lenhandmade.com.vn/wp-content/uploads/2024/01/bo-hoa-hong-len-handmade-xinh-xan.png",tags:["hoa"]},
+      ];
+
+      // CART
+      let cart = [];
+      const LS_KEY = 'hnm_cart_html_first_v2';
+      const productsGrid = document.getElementById('productsGrid');
+      const cartList = document.getElementById('cartList');
+      const cartSubtotal = document.getElementById('cartSubtotal');
+      const cartCount = document.getElementById('cartCount');
+      const miniCart = document.getElementById('miniCart');
+      const miniTotal = document.getElementById('miniTotal');
+
+      function formatVND(n){return new Intl.NumberFormat('vi-VN').format(n)+'₫'}
+      function findProduct(id){return PRODUCTS.find(p=>p.id===id)}
+      function save(){try{localStorage.setItem(LS_KEY,JSON.stringify(cart))}catch(e){}}
+      function load(){try{const r=localStorage.getItem(LS_KEY);if(r)cart=JSON.parse(r)}catch(e){}}
+
+      function renderProducts(list=PRODUCTS){productsGrid.innerHTML='';list.forEach(p=>{
+        const el = document.createElement('div');el.className='card';el.setAttribute('role','listitem');el.innerHTML = `
+          <div class="img" aria-hidden="true"><img src="${p.img}" alt="${escapeHtml(p.name)}"></div>
+          <div><h3 style="margin:6px 0 4px">${escapeHtml(p.name)}</h3>
+          <div class="muted small">${escapeHtml(p.desc)}</div>
+          <div class="meta" style="margin-top:8px"><div class="price">${formatVND(p.price)}</div><div class="tags small">${p.tags.join(', ')}</div></div>
+          <div class="actions"><form class="add-to-cart" data-id="${p.id}" onsubmit="event.preventDefault(); submitAdd(this)" style="display:flex;gap:8px;align-items:center;margin-top:8px"><label for="qty-${p.id}" class="small" style="display:none">Số lượng</label><input id="qty-${p.id}" name="qty" type="number" min="1" value="1" required style="width:72px;padding:6px;border:1px solid #f1f5f9;border-radius:8px"><button class="btn" type="submit">Thêm</button><button type="button" class="btn ghost" onclick="openQuickView(${p.id})">Xem</button></form></div>
+          </div>
+        `;
+        productsGrid.appendChild(el);
+      })}
+
+      function submitAdd(form){const id=Number(form.dataset.id);const qty=Number(new FormData(form).get('qty')||1);addToCart(id,qty)}
+
+      function renderCart(){
+        if(cart.length===0){cartList.innerHTML='<div class="muted">Giỏ hàng trống</div>';miniCart.innerText='Chưa có sản phẩm';cartSubtotal.innerText='0₫';if(miniTotal)miniTotal.innerText='0₫';cartCount.innerText=0;save();return}
+        const ul=document.createElement('ul');ul.style.listStyle='none';ul.style.padding=0;cart.forEach(item=>{
+          const p=findProduct(item.id);const li=document.createElement('li');li.style.padding='8px 0';li.style.display='flex';li.style.justifyContent='space-between';li.style.alignItems='center';li.innerHTML=`
+            <div><strong>${escapeHtml(p.name)}</strong><div class="muted small">${formatVND(p.price)}</div></div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <input type="number" min="1" value="${item.qty}" data-id="${item.id}" style="width:64px;padding:6px;border:1px solid #eef2f7;border-radius:6px">
+              <button class="btn ghost" data-remove="${item.id}">Xóa</button>
+            </div>
+          `;ul.appendChild(li);
+        });cartList.innerHTML='';cartList.appendChild(ul);
+        const subtotal = cart.reduce((s,i)=>s+findProduct(i.id).price*i.qty,0);
+        cartSubtotal.innerText=formatVND(subtotal);if(miniTotal)miniTotal.innerText=formatVND(subtotal);cartCount.innerText=cart.reduce((s,i)=>s+i.qty,0);miniCart.innerText=cart.map(i=>findProduct(i.id).name+' x'+i.qty).join(' • ');
+        save();
+        ul.querySelectorAll('input[type="number"]').forEach(inp=>inp.addEventListener('change',e=>{const id=Number(e.target.dataset.id);const val=Math.max(1,Number(e.target.value)||1);updateQty(id,val)}));
+        ul.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',e=>{const id=Number(e.target.getAttribute('data-remove'));if(confirm('Xóa sản phẩm khỏi giỏ?')) removeFromCart(id);}));
+      }
+
+      function addToCart(id,qty=1){const idx=cart.findIndex(c=>c.id===id);if(idx>-1)cart[idx].qty+=qty;else cart.push({id,qty});renderCart();}
+      function removeFromCart(id){cart=cart.filter(i=>i.id!==id);renderCart();}
+      function updateQty(id,qty){const it=cart.find(i=>i.id===id);if(!it)return;it.qty=qty;renderCart();}
+      function clearCart(){if(!confirm('Xóa tất cả sản phẩm?'))return;cart=[];renderCart();}
+
+      // DIALOG
+      const dialog = document.getElementById('dialogBox');
+      const dialogTitle = document.getElementById('dialogTitle');
+      const dialogContent = document.getElementById('dialogContent');
+
+      function openQuickView(id){const p=findProduct(id);dialogTitle.innerText=p.name;dialogContent.innerHTML = `\n        <div style="display:flex;gap:12px;align-items:start">\n          <img src="${p.img}" alt="${escapeHtml(p.name)}" style="width:200px;height:140px;object-fit:cover;border-radius:8px">\n          <div>\n            <div class="muted">${escapeHtml(p.desc)}</div>\n            <div style="font-weight:700;margin-top:8px">${formatVND(p.price)}</div>\n            <div style="margin-top:8px">\n              <form onsubmit="event.preventDefault(); addToCart(${p.id}, Number(this.qty.value)||1); dialog.close();" style="display:flex;gap:8px;align-items:center">\n                <input name="qty" type="number" min="1" value="1" style="width:80px;padding:6px;border-radius:6px;border:1px solid #eef2f7">\n                <button class="btn" type="submit">Thêm vào giỏ</button>\n              </form>\n            </div>\n          </div>\n        </div>\n      `;dialog.showModal();}
+
+      function openCheckout(){if(cart.length===0){alert('Giỏ hàng trống');return}dialogTitle.innerText='Thanh toán';dialogContent.innerHTML = `\n        <form id="checkoutForm">\n          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">\n            <input name="name" placeholder="Họ tên *" required style="padding:8px;border:1px solid #eef2f7;border-radius:6px">\n            <input name="phone" placeholder="Số điện thoại *" required style="padding:8px;border:1px solid #eef2f7;border-radius:6px">\n            <input name="email" type="email" placeholder="Email" style="padding:8px;border:1px solid #eef2f7;border-radius:6px">\n            <input name="address" placeholder="Địa chỉ giao hàng *" required style="padding:8px;border:1px solid #eef2f7;border-radius:6px">\n          </div>\n\n          <div style="margin-top:8px">\n            <strong>Đơn hàng</strong>\n            <div style="margin-top:6px" id="checkoutSummary">\n              ${cart.map(i=>`<div style="display:flex;justify-content:space-between;padding:6px 0">${escapeHtml(findProduct(i.id).name)} x${i.qty} <span>${formatVND(findProduct(i.id).price*i.qty)}</span></div>`).join('')}\n              <div style="padding-top:8px;font-weight:700">Tổng: ${formatVND(cart.reduce((s,i)=>s+findProduct(i.id).price*i.qty,0))}</div>\n            </div>\n          </div>\n\n          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px">\n            <button class="btn ghost" type="button" onclick="dialog.close()">Hủy</button>\n            <button class="btn" type="submit">Xác nhận & Thanh toán</button>\n          </div>\n        </form>\n      `;dialog.showModal();document.getElementById('checkoutForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const name=(f.get('name')||'').trim();alert('Thanh toán thành công. Cảm ơn '+name+'!');cart=[];renderCart();dialog.close();},{once:true});}
+
+      function applySearch(){const q=(document.getElementById('q').value||'').trim().toLowerCase();const sort=document.getElementById('sort').value;let out=PRODUCTS.filter(p=> (p.name+' '+p.desc+' '+p.tags.join(' ')).toLowerCase().includes(q));if(sort==='price_asc')out.sort((a,b)=>a.price-b.price);else if(sort==='price_desc')out.sort((a,b)=>b.price-a.price);renderProducts(out)}
+
+      function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]))}
+      document.getElementById('year').innerText=new Date().getFullYear();
+
+      (function init(){load();renderProducts();renderCart();})();
+    </script>
+  </body>
+</html>
